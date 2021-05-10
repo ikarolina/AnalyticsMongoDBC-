@@ -1,0 +1,18 @@
+﻿@model Logg.ViewModel.LogViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="~/js/log.js"></script>
+</head>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Log", "Index", "Index")</li>
+        <li>@Html.ActionLink("Log", "TelaDois", "TelaDois")</li>
+    </ul>
+</div>
+
+

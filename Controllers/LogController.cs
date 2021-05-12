@@ -7,6 +7,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using QuizAspNetCore.Config;
 using System;
+using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,18 +15,19 @@ namespace LogdeTela.Controllers
 {
     public class LogController : Controller
     {
-        private readonly Context _context;
-        private readonly ILogger<LogController> _logger;
+        private readonly IMongoCollection<Log> _log;
 
-        public LogController(IOptions<ConfigDB> opcoes)
+        public LogController(IMongoClient client)
         {
-            _context = new Context(opcoes);
+            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
+            //IMongoDatabase db = dbClient.GetDatabase("Log");
+            //var logTable = db.GetCollection<BsonDocument>("Log");
+            var database = client.GetDatabase("Log");
+            var collection = database.GetCollection<Log>(nameof(Log));
+
+            _log = collection;
         }
 
-        //public LogController(ILogger<LogController> logger)
-        //{
-        //    _logger = logger;
-        //}
 
         public IActionResult TelaDois()
         {
@@ -35,17 +37,19 @@ namespace LogdeTela.Controllers
         {
             return View();
         }
-
-
         public IActionResult VerificarLog(Log log)
         {
-            //var client = new MongoClient("mongodb://127.0.0.1:27017");
-            //var database = client.GetDatabase("Log");
-            //var logTable = database.GetCollection<BsonDocument>("Log");
-            //var _books = database.GetCollection<Log>("Log");
+            var filter = Builders<Log>.Filter.Eq(L => L.Usuario, "Iara");
+            var logConsulta = _log.Find(filter).ToList();
 
-            //var entity = _books.Find(document => document.Usuario == "Iara").FirstOrDefault();
-            //var teste = entity.ToString();
+            if (logConsulta.ToString() != "")
+            {
+                AtualizarLog(log);
+            }
+            else
+            {
+                _ = InserirLog(log);
+            }
 
             return Ok();
 
@@ -54,41 +58,32 @@ namespace LogdeTela.Controllers
         [HttpPost]
         public async Task<IActionResult> InserirLog(Log log)
         {
-            var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            IMongoDatabase db = dbClient.GetDatabase("Log");
-            var logTable = db.GetCollection<BsonDocument>("Log");
+            log.TelaVisualizada = "Index";
+            log.Usuario = "Iara";
+            log.TempoTotalNaTela = "2";
+            log.UltimoAcessoDataHora = DateTime.Now;
+            log.VisualizacoesTotais = 2;
 
-            var document = new BsonDocument();
-            document.Add("Usuario", log.Usuario);
-            document.Add("TelaVisualizada", log.TelaVisualizada);
-            document.Add("TempoNaTela", log.TempoTotalNaTela);
-            document.Add("VisualizacoesTotal", log.VisualizacoesTotais);
-            document.Add("UltimoAcessoDataHora", log.UltimoAcessoDataHora);
-
-            await logTable.InsertOneAsync(document);
+            await _log.InsertOneAsync(log);
 
             return Redirect("Index");
         }
 
-        public IActionResult AtualizarLog()
+        public IActionResult AtualizarLog(Log log)
         {
-            string usuario = "Iara";
-            DateTime ultimoAcesso = DateTime.Today;
-            int visualizacoes = 2; //pega o valor do banco + 1
-            //string tempoNaTela; //soma o que veio no front + o que já existe no banco
+            //int visualizacoesTotais = log.VisualizacoesTotais +1; 
+            //string tempoTotalNaTela = log.TempoTotalNaTela; 
 
-            var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            IMongoDatabase db = dbClient.GetDatabase("Log");
-            var logTable = db.GetCollection<BsonDocument>("Log");
+            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
+            //IMongoDatabase db = dbClient.GetDatabase("Log");
+            //var logTable = db.GetCollection<BsonDocument>("Log");
+            //var filter = new BsonDocument("Usuario", log.Usuario);
+            //var update = Builders<BsonDocument>.Update.Set("UltimoAcessoDataHora", DateTime.Now)
+            //                                            .Set("VisualizacoesTotal", visualizacoesTotais)
+            //                                            .Set("TempoTotalNaTela", tempoTotalNaTela);
 
-            var filter = new BsonDocument("Usuario", usuario);
-            var update = Builders<BsonDocument>.Update.Set("UltimoAcessoDataHora", ultimoAcesso);
-
-            var result = logTable.FindOneAndUpdate(filter, update);
-
-            //db.Log.update({ "Usuario":"Iara"},{ "TelaVisualizada":"Título foi atualizado"});
-
-            return Ok();
+            //var result = logTable.FindOneAndUpdate(filter, update);
+            //return Ok();
         }
 
 

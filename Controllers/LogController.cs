@@ -1,13 +1,7 @@
-﻿using AspNetCore.QuizAspNetCore;
-using LogdeTela.Models;
+﻿using LogdeTela.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
-using QuizAspNetCore.Config;
 using System;
-using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,9 +13,6 @@ namespace LogdeTela.Controllers
 
         public LogController(IMongoClient client)
         {
-            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            //IMongoDatabase db = dbClient.GetDatabase("Log");
-            //var logTable = db.GetCollection<BsonDocument>("Log");
             var database = client.GetDatabase("Log");
             var collection = database.GetCollection<Log>(nameof(Log));
 
@@ -71,19 +62,19 @@ namespace LogdeTela.Controllers
 
         public IActionResult AtualizarLog(Log log)
         {
-            //int visualizacoesTotais = log.VisualizacoesTotais +1; 
-            //string tempoTotalNaTela = log.TempoTotalNaTela; 
+            var filter = Builders<Log>.Filter.Eq(c => c.Usuario, "Iara");
+            var logConsulta = _log.Find(filter).ToList();
 
-            //var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            //IMongoDatabase db = dbClient.GetDatabase("Log");
-            //var logTable = db.GetCollection<BsonDocument>("Log");
-            //var filter = new BsonDocument("Usuario", log.Usuario);
-            //var update = Builders<BsonDocument>.Update.Set("UltimoAcessoDataHora", DateTime.Now)
-            //                                            .Set("VisualizacoesTotal", visualizacoesTotais)
-            //                                            .Set("TempoTotalNaTela", tempoTotalNaTela);
+            var tempoTela = logConsulta[0].TempoTotalNaTela;
+            var visualizacoes = logConsulta[0].VisualizacoesTotais;
 
-            //var result = logTable.FindOneAndUpdate(filter, update);
-            //return Ok();
+            var update = Builders<Log>.Update
+                .Set(L => L.UltimoAcessoDataHora, DateTime.Now)
+                .Set(L => L.VisualizacoesTotais, visualizacoes++)
+                .Set(L => L.TempoTotalNaTela, tempoTela);
+            var result =  _log.UpdateOne(filter, update);
+
+            return Ok();
         }
 
 

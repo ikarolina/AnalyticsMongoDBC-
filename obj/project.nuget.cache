@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2im5zWRPxJR7JiTi+HXnWHBWvYJ6tqhMT3BZ1L1qxO0EcLUyvqSwa87z99C5hit15CrHBhOanb2ryuC9MeCUoQ==",
+  "dgSpecHash": "HcOnYDvpY9rkIcEEKvWnEgxwJgBJgDKKDLhozajSAROERW/ClIZK5LtHni0vpiXdUxZjuNA6Yo8rKPFUY1jt/w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela - Copia\\LogdeTela.csproj",
+  "projectFilePath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela\\LogdeTela.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Iara Karolina\\.nuget\\packages\\dnsclient\\1.4.0\\dnsclient.1.4.0.nupkg.sha512",
     "C:\\Users\\Iara Karolina\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.5\\microsoft.entityframeworkcore.5.0.5.nupkg.sha512",

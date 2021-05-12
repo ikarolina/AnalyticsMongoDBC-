@@ -1006,11 +1006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela - Copia\\LogdeTela.csproj",
+      "projectUniqueName": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela\\LogdeTela.csproj",
       "projectName": "LogdeTela",
-      "projectPath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela - Copia\\LogdeTela.csproj",
+      "projectPath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela\\LogdeTela.csproj",
       "packagesPath": "C:\\Users\\Iara Karolina\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela - Copia\\obj\\",
+      "outputPath": "C:\\Users\\Iara Karolina\\Documents\\Logggs\\LogdeTela\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Iara Karolina\\AppData\\Roaming\\NuGet\\NuGet.Config",

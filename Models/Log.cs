@@ -11,5 +11,6 @@ namespace LogdeTela.Models
         public string TempoTotalNaTela { get; set; }
         public int VisualizacoesTotais { get; set; }
         public DateTime UltimoAcessoDataHora { get; set; }
+        //public DateTime SaidaAcessoDataHora { get; set; }
     }
 }

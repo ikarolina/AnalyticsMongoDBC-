@@ -54,6 +54,7 @@ C:\Users\Iara Karolina\Documents\Logggs\LogdeTela\obj\Debug\net5.0\LogdeTela.csp
 C:\Users\Iara Karolina\Documents\Logggs\LogdeTela\obj\Debug\net5.0\LogdeTela.genruntimeconfig.cache
 C:\Users\Iara Karolina\Documents\Logggs\LogdeTela\obj\Debug\net5.0\Razor\Views\Log\Index.cshtml.g.cs
 C:\Users\Iara Karolina\Documents\Logggs\LogdeTela\obj\Debug\net5.0\Razor\Views\Log\TelaDois.cshtml.g.cs
+<<<<<<< HEAD
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.AssemblyInfoInputs.cache
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.AssemblyInfo.cs
@@ -109,3 +110,61 @@ C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.R
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.Views.pdb
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.csproj.CopyComplete
 C:\Users\Iara Karolina\Documents\AnalyticsMongoDBC-\obj\Debug\net5.0\LogdeTela.genruntimeconfig.cache
+=======
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\appsettings.json
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.exe
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.deps.json
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.runtimeconfig.json
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.runtimeconfig.dev.json
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\ref\LogdeTela.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.pdb
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.Views.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\LogdeTela.Views.pdb
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\DnsClient.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\MongoDB.Driver.Legacy.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\MongoDB.Bson.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\MongoDB.Driver.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\MongoDB.Driver.Core.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\MongoDB.Libmongocrypt.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\SharpCompress.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\win\native\libzstd.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\win\native\snappy32.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.csprojAssemblyReference.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.AssemblyInfoInputs.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.AssemblyInfo.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.csproj.CoreCompileInputs.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.RazorAssemblyInfo.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.RazorAssemblyInfo.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\staticwebassets\LogdeTela.StaticWebAssets.Manifest.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\staticwebassets\LogdeTela.StaticWebAssets.xml
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\scopedcss\bundle\LogdeTela.styles.css
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.TagHelpers.input.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.TagHelpers.output.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.RazorCoreGenerate.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\Log\Index.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\Log\TelaDois.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.RazorTargetAssemblyInfo.cache
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.RazorTargetAssemblyInfo.cs
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.Views.pdb
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.csproj.CopyComplete
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\ref\LogdeTela.dll
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.pdb
+C:\Users\Iara Karolina\Documents\Logggs\LogdeTela - Copia\obj\Debug\net5.0\LogdeTela.genruntimeconfig.cache
+>>>>>>> developer

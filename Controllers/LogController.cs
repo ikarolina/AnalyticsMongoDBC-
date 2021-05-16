@@ -1,11 +1,6 @@
-﻿using AspNetCore.QuizAspNetCore;
-using LogdeTela.Models;
+﻿using LogdeTela.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using MongoDB.Bson;
 using MongoDB.Driver;
-using QuizAspNetCore.Config;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,18 +9,15 @@ namespace LogdeTela.Controllers
 {
     public class LogController : Controller
     {
-        private readonly Context _context;
-        private readonly ILogger<LogController> _logger;
+        private readonly IMongoCollection<Log> _log;
 
-        public LogController(IOptions<ConfigDB> opcoes)
+        public LogController(IMongoClient client)
         {
-            _context = new Context(opcoes);
-        }
+            var database = client.GetDatabase("Analytics");
+            var collection = database.GetCollection<Log>(nameof(Log));
 
-        //public LogController(ILogger<LogController> logger)
-        //{
-        //    _logger = logger;
-        //}
+            _log = collection;
+        }
 
         public IActionResult TelaDois()
         {
@@ -39,13 +31,18 @@ namespace LogdeTela.Controllers
 
         public IActionResult VerificarLog(Log log)
         {
-            //var client = new MongoClient("mongodb://127.0.0.1:27017");
-            //var database = client.GetDatabase("Log");
-            //var logTable = database.GetCollection<BsonDocument>("Log");
-            //var _books = database.GetCollection<Log>("Log");
+            var usuarioLog = Builders<Log>.Filter.Eq(x => x.Usuario, log.Usuario);
+            var telaVisualizadaLog = Builders<Log>.Filter.Eq(x => x.TelaVisualizada, log.TelaVisualizada);
+            var logConsulta = _log.Find(usuarioLog & telaVisualizadaLog).ToList();
 
-            //var entity = _books.Find(document => document.Usuario == "Iara").FirstOrDefault();
-            //var teste = entity.ToString();
+            if (logConsulta.ToString() != "" && logConsulta.Count() != 0)
+            {
+                AtualizarLog(log);
+            }
+            else
+            {
+                _ = InserirLog(log);
+            }
 
             return Ok();
 
@@ -54,39 +51,32 @@ namespace LogdeTela.Controllers
         [HttpPost]
         public async Task<IActionResult> InserirLog(Log log)
         {
-            var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            IMongoDatabase db = dbClient.GetDatabase("Log");
-            var logTable = db.GetCollection<BsonDocument>("Log");
+            log.TelaVisualizada = log.TelaVisualizada;
+            log.Usuario = log.Usuario;
+            log.TempoTotalNaTela = log.TempoTotalNaTela;
+            log.UltimoAcessoDataHora = DateTime.Now;
+            log.VisualizacoesTotais = 1;
 
-            var document = new BsonDocument();
-            document.Add("Usuario", log.Usuario);
-            document.Add("TelaVisualizada", log.TelaVisualizada);
-            document.Add("TempoNaTela", log.TempoTotalNaTela);
-            document.Add("VisualizacoesTotal", log.VisualizacoesTotais);
-            document.Add("UltimoAcessoDataHora", log.UltimoAcessoDataHora);
-
-            await logTable.InsertOneAsync(document);
+            await _log.InsertOneAsync(log);
 
             return Redirect("Index");
         }
 
-        public IActionResult AtualizarLog()
+        public IActionResult AtualizarLog(Log log)
         {
-            string usuario = "Iara";
-            DateTime ultimoAcesso = DateTime.Today;
-            int visualizacoes = 2; //pega o valor do banco + 1
-            //string tempoNaTela; //soma o que veio no front + o que já existe no banco
+            var filter = Builders<Log>.Filter.Eq(c => c.Usuario, log.Usuario);
+            var analyticsConsulta = _log.Find(filter).ToList();
 
-            var dbClient = new MongoClient("mongodb://127.0.0.1:27017");
-            IMongoDatabase db = dbClient.GetDatabase("Log");
-            var logTable = db.GetCollection<BsonDocument>("Log");
+            var tempoTelaAtual = analyticsConsulta[0].TempoTotalNaTela;
+            var tempoTelaTotal = tempoTelaAtual + log.TempoTotalNaTela;
+            var visualizacoes = analyticsConsulta[0].VisualizacoesTotais;
+            var teste = (visualizacoes + 1);
 
-            var filter = new BsonDocument("Usuario", usuario);
-            var update = Builders<BsonDocument>.Update.Set("UltimoAcessoDataHora", ultimoAcesso);
-
-            var result = logTable.FindOneAndUpdate(filter, update);
-
-            //db.Log.update({ "Usuario":"Iara"},{ "TelaVisualizada":"Título foi atualizado"});
+            var update = Builders<Log>.Update
+                .Set(L => L.UltimoAcessoDataHora, DateTime.Now)
+                .Set(L => L.VisualizacoesTotais, teste)
+                .Set(L => L.TempoTotalNaTela, tempoTelaTotal);
+            var result = _log.UpdateOne(filter, update);
 
             return Ok();
         }

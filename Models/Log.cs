@@ -9,7 +9,7 @@ namespace LogdeTela.Models
         public string Usuario { get; set; }
         public string TelaVisualizada { get; set; }
         public string TempoTotalNaTela { get; set; }
-        public string VisualizacoesTotais { get; set; }
+        public int VisualizacoesTotais { get; set; }
         public DateTime UltimoAcessoDataHora { get; set; }
     }
 }
